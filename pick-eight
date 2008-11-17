@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# pick-eight
+#
+# echoes eight random lines from a file
+#
+# note: it doesn't always get eight different lines if
+#   the random number generator dups something, or if
+#   there's too few lines in the file
+#
+# todo: bad form to run this as a script into /bin/sh/,
+#   but jot is new to me and there's probably a better way
+#
+jot -w"sed -n -e %dp $1" -r 8 1  $(wc -l < $1)  | /bin/sh
