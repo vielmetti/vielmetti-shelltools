@@ -1,0 +1,5 @@
+#!/bin/sh
+for THEDAY in -730 -480 -365 -270 -150 -100 -60 -30 -20 -12 -7 -4 4 7 12 20 30 60 100 150 270 365 480 730
+do
+   $HOME/bin/day -o $THEDAY | $HOME/bin/month-num-to-name.sh | sed -e 's/^/\[/' -e 's/$/\] '$THEDAY'/'
+done

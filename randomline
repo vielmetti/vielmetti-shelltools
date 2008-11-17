@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+while(<>)
+  {
+  push @lines, $_;
+  }
+
+$randline = $#lines;
+$randline = rand($randline);
+print $lines[$randline];

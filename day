@@ -1,0 +1,143 @@
+#!/bin/sh
+
+# This shell script determines from date(1) what today's date is, then will
+# output the date in the format yymmdd.  If an offset is specified using the 
+# "-o" option, it will determine the date of the day corresponding to the 
+# current date + or - the offset (using the sign supplied by the user).
+# An example follows:
+#
+#	day -o 4
+#
+# will provide the date four days in the future.
+#
+# 	day -o -27
+#
+# will provide the date 27 days ago.
+#
+# The algorithm provided will work across months and years, and will determine
+# leap years.
+#
+#
+# Author:       Hugh Mahon                              |__|     
+#                                                       |  |     
+#                                                          |\  /|     
+#               e-mail: hugh@mahon.cwx.net                 | \/ |
+#                                                        
+
+#set -x
+
+function year_len
+{
+	let leap=0
+	let daysInYear=365
+
+	if (( $year % 400 == 0 ))
+	then
+		let daysInYear=366
+		let leap=1
+	elif (( $year % 4 == 0 )) && (( $year % 100 != 0))
+	then
+		let daysInYear=366
+		let leap=1
+	fi
+
+
+}
+
+
+let offset=0
+
+while [ $# -gt 0 ]
+do
+	case $1 in
+		-o)	offset=$2
+			shift;;
+		*)	echo "usage: $0 [-o #]"
+			echo "          where -o # specifies an offset from today's date (+/-)"
+			exit;;
+	esac
+	shift
+done
+
+today_date=`date +%j | sed -e s/^00// | sed -e s/^0//`
+
+let today_date=today_date+$offset
+
+year=`date +%Y`
+
+leap=0
+let daysInYear=365
+
+year_len
+
+if (( today_date < 1 ))
+then
+	while (( today_date < 1 ))
+	do
+		let year=year-1
+		year_len
+		let today_date=today_date+daysInYear
+	done
+fi
+
+if (( today_date > daysInYear ))
+then
+	while (( today_date > daysInYear ))
+	do
+		let today_date=today_date-daysInYear
+		let year=year+1
+		year_len
+	done
+fi
+
+let i=1
+let days=0
+let this_month=0
+let days_so_far=0
+while [ $i -lt 13 -a $this_month -eq 0 ]
+do
+	if [ $i = 1 -o $i = 3 -o $i = 5 -o $i = 7 -o $i = 8 -o $i = 10 -o $i = 12 ]
+	then
+		let days=days+31
+	elif [ $i = 4 -o $i = 6 -o $i = 9 -o $i = 11 ]
+	then
+		let days=days+30
+	elif [ $i = 2 -a $leap -eq 1 ]
+	then
+		let days=days+29
+	elif [ $i = 2 ]
+	then
+		let days=days+28
+	fi
+
+	if (( days < today_date ))
+	then
+		let days_so_far=days
+	else
+		let this_month=i
+	fi
+
+	let i=i+1
+
+done
+
+
+let day=today_date-days_so_far
+
+DATE="$year"
+
+if (( this_month < 10 ))
+then
+	DATE="${DATE}-0$this_month"
+else
+	DATE="$DATE-$this_month"
+fi
+
+if (( day < 10 ))
+then
+	DATE="${DATE}-0$day"
+else
+	DATE="$DATE-$day"
+fi
+
+echo $DATE
