@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# randomline - prints a random line from a file
+
 while(<>)
   {
   push @lines, $_;
