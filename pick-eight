@@ -11,4 +11,6 @@
 # todo: bad form to run this as a script into /bin/sh/,
 #   but jot is new to me and there's probably a better way
 #
+# bug: doesn't work on standard input
+#
 jot -w"sed -n -e %dp $1" -r 8 1  $(wc -l < $1)  | /bin/sh
