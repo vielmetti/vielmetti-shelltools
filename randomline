@@ -1,6 +1,9 @@
 #!/usr/bin/perl
 
 # randomline - prints a random line from a file
+#
+# note that there is a related program, randline, with a man page
+#     http://www.eskimo.com/~scs/src/randline.man.html
 
 while(<>)
   {
