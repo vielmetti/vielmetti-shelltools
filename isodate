@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# print date in ISO week date format
+#
+# see http://www.staff.science.uu.nl/~gent0113/calendar/isocalendar.htm for too much info
+
+date +%G-W%V-%u
