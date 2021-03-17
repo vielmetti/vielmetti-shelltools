@@ -6,4 +6,5 @@ actions:
     list:
       - git
       - jq
-      
+      - htop
+      - glances
