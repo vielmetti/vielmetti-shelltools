@@ -3,7 +3,6 @@
 
 actions:
   - action: package.install
-    name: ubuntu-packages
     list:
       - git
       - jq
