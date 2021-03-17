@@ -33,6 +33,7 @@ The manifests provided should do the following when they are done:
 * ubuntu.yml - install packages from the standard ubuntu repos
 * ubuntu-languages.yml - install latest versions of compilers from PPA or packages
 * ubuntu-tailscale.yml - set up private networking
+* ubuntu-equinix-metal.yml - cli tools to support setting up a new metal machine
 
 ## secrets
 
