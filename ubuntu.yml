@@ -1,0 +1,9 @@
+# packages to add to a bare Ubuntu 20.04 system
+#
+
+actions:
+  - action: package.install
+    list:
+      - git
+      - jq
+      

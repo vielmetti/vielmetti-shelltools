@@ -1,4 +1,0 @@
-actions:
-  - action: package.install
-    name: golang-go
-    repository: ppa:longsleep/golang-backports
