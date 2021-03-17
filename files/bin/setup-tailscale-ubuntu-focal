@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# set up tailscale for ubuntu focal (20.04)
+# based on https://tailscale.com/download/linux
+
+# run as root
+# will require access to a browser
+
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | apt-key add -
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | tee /etc/apt/sources.list.d/tailscale.list
+
+# Install Tailscale
+
+apt-get update
+apt-get install tailscale
+
+# Authenticate and connect your machine to your Tailscale network
+
+tailscale up
