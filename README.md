@@ -32,6 +32,7 @@ The manifests provided should do the following when they are done:
 * bindir.yml - install utilities from files/bin
 * ubuntu.yml - install packages from the standard ubuntu repos
 * ubuntu-languages.yml - install latest versions of compilers from PPA or packages
+* ubuntu-tailscale.yml - set up private networking
 
 ## secrets
 
