@@ -3,9 +3,13 @@
 
 actions:
   - action: package.install
+    name: ubuntu-packages
     list:
       - git
       - jq
       - htop
       - glances
       - mosh
+      - curl
+      - wget
+
