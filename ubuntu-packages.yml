@@ -6,6 +6,7 @@ actions:
     list:
       - git
       - jq
+      - jo
       - htop
       - glances
       - mosh
