@@ -16,4 +16,5 @@ actions:
       - finger
       - pandoc
       - vim
+      - bats
       - software-properties-common
