@@ -11,5 +11,6 @@ actions:
       - mosh
       - curl
       - wget
+      - nmap
       - pandoc
 
