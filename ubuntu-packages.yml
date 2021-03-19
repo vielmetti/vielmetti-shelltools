@@ -12,5 +12,7 @@ actions:
       - curl
       - wget
       - nmap
+      - finger
       - pandoc
-
+      - vim
+      - software-properties-common
