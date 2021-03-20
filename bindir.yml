@@ -6,3 +6,10 @@ actions:
     from: bin/setup-tailscale-ubuntu-focal
     to: /root/.bin/setup-tailscale-ubuntu-focal
     chmod: "700"
+
+actions:
+  - name: setup-steampipe-ubuntu
+    action: file.copy
+    from: bin/setup-steampipe-ubuntu
+    to: /root/.bin/setup-steampipe-ubuntu
+    chmod: "700"
