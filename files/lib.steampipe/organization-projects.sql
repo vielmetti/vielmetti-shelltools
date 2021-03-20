@@ -6,7 +6,8 @@ select
 from
   equinix_metal_organization as o,
   equinix_metal_project as p
-order by
-  o.created_at
 where
   o.id = p.organization_id
+order by
+  o.created_at
+
