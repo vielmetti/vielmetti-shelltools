@@ -5,4 +5,4 @@ actions:
     action: file.copy
     from: bin/setup-tailscale-ubuntu-focal
     to: /root/.bin/setup-tailscale-ubuntu-focal
-    chmod: 700
+    chmod: "700"
