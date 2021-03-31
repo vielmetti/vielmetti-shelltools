@@ -4,10 +4,10 @@ actions:
   - name: setup-tailscale-ubuntu-focal
     action: file.copy
     from: bin/setup-tailscale-ubuntu-focal
-    to: /root/.bin/setup-tailscale-ubuntu-focal
+    to: /home/emv/bin/setup-tailscale-ubuntu-focal
     chmod: 700
   - name: setup-steampipe-ubuntu
     action: file.copy
     from: bin/setup-steampipe-ubuntu
-    to: /root/.bin/setup-steampipe-ubuntu
+    to: /home/emv/bin/setup-steampipe-ubuntu
     chmod: 700
