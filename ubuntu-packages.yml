@@ -19,3 +19,4 @@ actions:
       - vim
       - bats
       - software-properties-common
+      - hub
