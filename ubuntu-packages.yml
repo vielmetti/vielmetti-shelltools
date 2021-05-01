@@ -22,3 +22,4 @@ actions:
       - hub
       - zsh
       - neofetch
+      - tmux
