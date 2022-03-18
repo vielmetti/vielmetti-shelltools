@@ -18,6 +18,10 @@ to really support setting up temporary working machines that can
 be fully functional and also destroyed with complete confidence of
 no loss of data.
 
+To install, first install `comtrya` per package directions, then
+
+`comtrya https://github.com/vielmetti/vielmetti-shelltools`
+
 ## manifests in the top level directory
 
 The bootstrap process currently involves installing `comtrya`, installing
