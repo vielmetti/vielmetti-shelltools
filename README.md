@@ -20,7 +20,10 @@ no loss of data.
 
 To install, first install `comtrya` per package directions, then
 
-`comtrya https://github.com/vielmetti/vielmetti-shelltools`
+`comtrya -d https://github.com/vielmetti/vielmetti-shelltools apply`
+
+Note that this is only really supposed to work for me, and that you
+may need to make (extensive) changes to get it to work for you.
 
 ## manifests in the top level directory
 
